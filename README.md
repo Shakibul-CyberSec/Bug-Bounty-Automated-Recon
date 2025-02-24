@@ -36,14 +36,14 @@ A comprehensive, automated script for bug bounty recon that combines passive and
 If the `Go` command is not found on your system, you can easily add it to your PATH using echo. This is a quick way to ensure that `Go` is accessible from anywhere in your terminal.
 
 Steps to add `Go` to your PATH:
-1. Check if `Go` is installed: First, check if `Go` is installed on your system:
+1. Check if `Go` is installed on your system:
 
    ```bash
    go version
    ```
-If you get a message like command not found, `Go` is not installed or not in your PATH.
+   If you get a message like command not found, `Go` is not installed or not in your PATH.
 
-2. Add Go to PATH using echo: Use the following commands to add `Go` to your PATH depending on your shell.
+2. Add `Go` to PATH using echo: Use the following commands to add `Go` to your PATH depending on your shell.
 
    ```bash
    echo 'export GOPATH=$HOME/go' >> ~/.zshrc   # If you're using zsh
