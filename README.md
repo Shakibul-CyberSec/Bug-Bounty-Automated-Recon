@@ -37,9 +37,8 @@ A comprehensive, automated script for bug bounty recon that combines passive and
 1. Initial Footprinting & Passive Data Collection
    - WHOIS Lookup
 2. Subdomain & Asset Enumeration
-   - Amass (Passive Mode)
+   - Amass
    - Subfinder
-   - Assetfinder
 3. Service Discovery
    - Full Port Scan with Nmap
    - Fast Scan with MassScan
@@ -48,14 +47,10 @@ A comprehensive, automated script for bug bounty recon that combines passive and
    - Gobuster (Directory Bruteforce)
    - ffuf (Directory Bruteforce)
    - Arjun (Parameter Discovery)
-5. Source Code & GitHub Recon
-   - TruffleHog (Scan for Secrets)
-6. Technology Fingerprinting
+5. Technology Fingerprinting
    - WhatWeb
-7. Vulnerability Scanning
+6. Vulnerability Scanning
    - Nuclei
-8. Pattern Matching & Filtering
-   - gf (Extract Interesting Patterns)
 
 # Contributing:
 Contributions are welcome! If you have any suggestions, improvements, or bug fixes, feel free to open an issue or submit a pull request.
