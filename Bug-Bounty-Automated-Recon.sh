@@ -16,6 +16,9 @@ check_install() {
     fi
 }
 
+# Ensure pip3 is installed before installing Python-based tools
+check_install "pip3" "sudo apt-get install python3-pip -y"
+
 # Check for required tools
 check_install "whatweb" "sudo apt-get install whatweb -y"
 check_install "arjun" "git clone https://github.com/s0md3v/Arjun.git && cd Arjun && pip3 install -r requirements.txt && cd .."
