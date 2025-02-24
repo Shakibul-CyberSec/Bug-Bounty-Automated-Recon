@@ -60,4 +60,50 @@ Refer to each tool's GitHub page for more installation instructions.
 git clone https://github.com/Shakibul-CyberSec/Bug-Bounty-Automated-Recon.git
 cd Bug-Bounty-Automated-Recon
 ```
-2.
+2. Make the script executable:
+
+   ```bash
+   chmod +x Bug-Bounty-Automated-Recon.sh
+   ```
+3. Run the script:
+   Use the following command to run the recon script on a target domain:
+   
+   ```bash
+   ./Bug-Bounty-Automated-Recon.sh <target_domain>
+   ```
+   Example:
+
+   ```bash
+   ./Bug-Bounty-Automated-Recon.sh example.com
+   ```
+This will automatically start the recon process for the target domain, performing various steps such as WHOIS lookup, subdomain enumeration, port scanning, vulnerability scanning, and more.
+
+# Recon Process Workflow:
+1. Initial Footprinting & Passive Data Collection
+  - WHOIS Lookup
+  - Certificate Transparency Logs
+2. Subdomain & Asset Enumeration
+   - Amass (Passive Mode)
+   - Subfinder
+   - Assetfinder
+   - DNS Permutations with Altdns
+   - DNS Generation with DNSGen
+3. Service Discovery
+   - Full Port Scan with Nmap
+   - Fast Scan with MassScan
+4. Content & Directory Discovery
+   - gau (GetAllUrls)
+   - Gobuster (Directory Bruteforce)
+   - ffuf (Directory Bruteforce)
+   - Arjun (Parameter Discovery)
+5. Source Code & GitHub Recon
+   - Gitrob (Search for Exposed Data)
+   - TruffleHog (Scan for Secrets)
+6. Technology Fingerprinting
+   - Wappalyzer / BuiltWith
+7. Vulnerability Scanning
+   - Nuclei
+8. Pattern Matching & Filtering
+   - gf (Extract Interesting Patterns)
+   
+
