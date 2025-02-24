@@ -105,5 +105,10 @@ This will automatically start the recon process for the target domain, performin
    - Nuclei
 8. Pattern Matching & Filtering
    - gf (Extract Interesting Patterns)
+
+# Contributing:
+Contributions are welcome! If you have any suggestions, improvements, or bug fixes, feel free to open an issue or submit a pull request.
+# License:
+This project is licensed under the MIT License - see the LICENSE file for details.
    
 
