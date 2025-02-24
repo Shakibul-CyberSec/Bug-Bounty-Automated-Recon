@@ -72,7 +72,7 @@ main() {
     run_and_save "amass enum -d $target" "Recon_Results/$target/amass.txt"
     run_and_save "subfinder -d $target" "Recon_Results/$target/subfinder.txt"
     run_and_save "nmap -sV $target" "Recon_Results/$target/nmap.txt"
-    run_and_save "masscan $target -p1-65535 --rate 1000" "Recon_Results/$target/masscan.txt"
+    run_and_save "masscan -p1-65535 --rate 1000 $target" "Recon_Results/$target/masscan.txt"
     run_and_save "gau $target" "Recon_Results/$target/gau.txt"
     run_and_save "gobuster dir -u http://$target -w $wordlist" "Recon_Results/$target/gobuster.txt"
     run_and_save "ffuf -u http://$target/FUZZ -w $wordlist" "Recon_Results/$target/ffuf.txt"
