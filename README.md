@@ -38,23 +38,24 @@ If the Go command is not found on your system, you can easily add it to your PAT
 Steps to add Go to your PATH:
 1. Check if Go is installed: First, check  Reload the Shell Configuration:if Go is installed on your system:
 
-  ```bash
-  go version
- ```
+   ```bash
+   go version
+   ```
 If you get a message like command not found, Go is not installed or not in your PATH.
+
 2. Add Go to PATH using echo: Use the following commands to add Go to your PATH depending on your shell.
 
- ```bash
-echo 'export GOPATH=$HOME/go' >> ~/.zshrc   # If you're using zsh
-# or
-echo 'export GOPATH=$HOME/go' >> ~/.bashrc  # If you're using bash
-echo 'export PATH=$PATH:$GOPATH/bin' >> ~/.zshrc  # or ~/.bashrc
-```
+   ```bash
+   echo 'export GOPATH=$HOME/go' >> ~/.zshrc   # If you're using zsh
+   # or
+   echo 'export GOPATH=$HOME/go' >> ~/.bashrc  # If you're using bash
+   echo 'export PATH=$PATH:$GOPATH/bin' >> ~/.zshrc  # or ~/.bashrc
+   ```
 3. Reload the Shell Configuration:
 
-   ```bash
+    ```bash
     source ~/.zshrc   # or source ~/.bashrc
-   ```
+    ```
    
  
 # Recon Process Workflow:
