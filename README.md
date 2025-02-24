@@ -60,8 +60,14 @@ If you get a message like command not found, Go is not installed or not in your 
   If the arjun tool is not found after installation, it's likely because pipx's binary directory is not in your PATH. You can resolve this by ensuring that pipx's installation path is added to your system's PATH.
 Step 1: Run the following command to ensure pipx is in your PATH:
  ```bash
-        pipx ensurepat
+ pipx ensurepath
  ```
+This command automatically ensures that pipx's binary directory is included in your PATH for future terminal sessions.
+Step 2: Reload your shell configuration:
+After running pipx ensurepath, reload your shell configuration to apply the changes.
+ ```bash
+ source ~/.zshrc   # or source ~/.bashrc
+  ```
 
  
 # Recon Process Workflow:
