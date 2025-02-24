@@ -19,9 +19,12 @@ check_install() {
 # Ensure pip3 is installed before installing Python-based tools
 check_install "pip3" "sudo apt-get install python3-pip -y"
 
+# Ensure pipx is installed before using it
+check_install "pipx" "sudo apt install pipx -y"
+
 # Check for required tools
 check_install "whatweb" "sudo apt-get install whatweb -y"
-check_install "arjun" "git clone https://github.com/s0md3v/Arjun.git && cd Arjun && pip3 install -r requirements.txt && cd .."
+check_install "arjun" "pipx install git+https://github.com/s0md3v/Arjun.git"
 check_install "nuclei" "wget https://github.com/projectdiscovery/nuclei/releases/download/v3.3.8/nuclei-linux-amd64-v3.3.8.tar.gz && tar -xvzf nuclei-linux-amd64-v3.3.8.tar.gz && sudo mv nuclei /usr/local/bin"
 check_install "amass" "sudo apt-get install amass -y"
 check_install "subfinder" "sudo apt-get install subfinder -y"
