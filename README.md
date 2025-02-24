@@ -56,10 +56,10 @@ Refer to each tool's GitHub page for more installation instructions.
 # How to Use:
 1. Clone this repository:
 
-```bash
-git clone https://github.com/Shakibul-CyberSec/Bug-Bounty-Automated-Recon.git
-cd Bug-Bounty-Automated-Recon
-```
+   ```bash
+   git clone https://github.com/Shakibul-CyberSec/Bug-Bounty-Automated-Recon.git
+   cd Bug-Bounty-Automated-Recon
+   ```
 2. Make the script executable:
 
    ```bash
@@ -80,8 +80,8 @@ This will automatically start the recon process for the target domain, performin
 
 # Recon Process Workflow:
 1. Initial Footprinting & Passive Data Collection
-  - WHOIS Lookup
-  - Certificate Transparency Logs
+   - WHOIS Lookup
+   - Certificate Transparency Logs
 2. Subdomain & Asset Enumeration
    - Amass (Passive Mode)
    - Subfinder
