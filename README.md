@@ -32,18 +32,18 @@ A comprehensive, automated script for bug bounty recon that combines passive and
    ./Bug-Bounty-Automated-Recon.sh example.com
    ```
  This script automates the reconnaissance process for a target domain by first ensuring that all necessary tools are installed. If any required tools are missing, it automatically installs them before proceeding. Once the dependencies are met, the script initiates a comprehensive recon workflow, including WHOIS lookup, subdomain enumeration, port scanning, and vulnerability scanning. By streamlining these processes, it ensures an efficient and structured approach to gathering intelligence on the target domain.
-# Adding Go to PATH
-If the Go command is not found on your system, you can easily add it to your PATH using echo. This is a quick way to ensure that Go is accessible from anywhere in your terminal.
+# Adding `Go` to PATH
+If the `Go` command is not found on your system, you can easily add it to your PATH using echo. This is a quick way to ensure that `Go` is accessible from anywhere in your terminal.
 
-Steps to add Go to your PATH:
-1. Check if Go is installed: First, check  Reload the Shell Configuration:if Go is installed on your system:
+Steps to add `Go` to your PATH:
+1. Check if `Go` is installed: First, check if `Go` is installed on your system:
 
    ```bash
    go version
    ```
-If you get a message like command not found, Go is not installed or not in your PATH.
+If you get a message like command not found, `Go` is not installed or not in your PATH.
 
-2. Add Go to PATH using echo: Use the following commands to add Go to your PATH depending on your shell.
+2. Add Go to PATH using echo: Use the following commands to add `Go` to your PATH depending on your shell.
 
    ```bash
    echo 'export GOPATH=$HOME/go' >> ~/.zshrc   # If you're using zsh
@@ -56,15 +56,15 @@ If you get a message like command not found, Go is not installed or not in your 
     ```bash
     source ~/.zshrc   # or source ~/.bashrc
     ```
-# Adding `pipx`,  to `Amass`,PATH
-  If the arjun tool is not found after installation, it's likely because pipx's binary directory is not in your PATH. You can resolve this by ensuring that pipx's installation path is added to your system's PATH.
-Step 1: Run the following command to ensure pipx is in your PATH:
+# Adding `pipx` to PATH
+  If the arjun tool is not found after installation, it's likely because `pipx`'s binary directory is not in your PATH. You can resolve this by ensuring that `pipx`'s installation path is added to your system's PATH.
+Step 1: Run the following command to ensure `pipx` is in your PATH:
  ```bash
  pipx ensurepath
  ```
-This command automatically ensures that pipx's binary directory is included in your PATH for future terminal sessions.
+This command automatically ensures that `pipx`'s binary directory is included in your PATH for future terminal sessions.
 Step 2: Reload your shell configuration:
-After running pipx ensurepath, reload your shell configuration to apply the changes.
+After running `pipx` ensurepath, reload your shell configuration to apply the changes.
  ```bash
  source ~/.zshrc   # or source ~/.bashrc
   ```
