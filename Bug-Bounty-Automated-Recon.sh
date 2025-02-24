@@ -16,21 +16,21 @@ check_install() {
     fi
 }
 
-# Ensure pip3 is installed before installing Python-based tools
-check_install "pip3" "sudo apt-get install python3-pip -y"
+# Install Go first (required for several tools)
+check_install "go" "sudo apt update && sudo apt install golang-go -y"
 
 # Ensure pipx is installed before using it
-check_install "pipx" "sudo apt install pipx -y"
+check_install "pipx" "sudo apt install pipx -y && pipx ensurepath"
 
-# Check for required tools
+# Install tools using appropriate methods
 check_install "whatweb" "sudo apt-get install whatweb -y"
 check_install "arjun" "pipx install git+https://github.com/s0md3v/Arjun.git"
-check_install "nuclei" "wget https://github.com/projectdiscovery/nuclei/releases/download/v3.3.8/nuclei-linux-amd64-v3.3.8.tar.gz && tar -xvzf nuclei-linux-amd64-v3.3.8.tar.gz && sudo mv nuclei /usr/local/bin"
-check_install "amass" "sudo apt-get install amass -y"
-check_install "subfinder" "sudo apt-get install subfinder -y"
+check_install "nuclei" "go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest && sudo mv ~/go/bin/nuclei /usr/local/bin"
+check_install "amass" "go install -v github.com/owasp-amass/amass/v4/...@master && sudo mv ~/go/bin/amass /usr/local/bin"
+check_install "subfinder" "go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest && sudo mv ~/go/bin/subfinder /usr/local/bin"
 check_install "nmap" "sudo apt-get install nmap -y"
 check_install "masscan" "sudo apt-get install masscan -y"
-check_install "gau" "sudo apt-get install gau -y"
+check_install "gau" "go install github.com/lc/gau/v2/cmd/gau@latest && sudo mv ~/go/bin/gau /usr/local/bin"
 check_install "gobuster" "sudo apt-get install gobuster -y"
 check_install "ffuf" "sudo apt-get install ffuf -y"
 check_install "whois" "sudo apt-get install whois -y"
