@@ -48,21 +48,32 @@ run_and_save() {
 main() {
     target=$1
     create_directory "$target"
-    
+
     echo "[*] Starting Recon on $target"
-    
+
+    # Prompt for wordlist (used in Gobuster and FFUF)
+    read -p "[?] Enter the path to the wordlist for Gobuster & FFUF (default: /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt): " wordlist
+    wordlist=${wordlist:-/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt}
+
+    # Prompt for nuclei template directory
+    read -p "[?] Enter the path to the Nuclei template directory (default: /root/nuclei-templates): " nuclei_templates
+    nuclei_templates=${nuclei_templates:-/root/nuclei-templates}
+
+    # Prompt for Arjun parameter fuzzing URL
+    read -p "[?] Enter a URL for Arjun parameter fuzzing (e.g., https://example.com/page): " arjun_url
+
     run_and_save "whois $target" "Recon_Results/$target/whois.txt"
     run_and_save "amass enum -d $target" "Recon_Results/$target/amass.txt"
     run_and_save "subfinder -d $target" "Recon_Results/$target/subfinder.txt"
     run_and_save "nmap -sV $target" "Recon_Results/$target/nmap.txt"
     run_and_save "masscan $target -p1-65535 --rate 1000" "Recon_Results/$target/masscan.txt"
     run_and_save "gau $target" "Recon_Results/$target/gau.txt"
-    run_and_save "gobuster dir -u http://$target -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt" "Recon_Results/$target/gobuster.txt"
-    run_and_save "ffuf -u http://$target/FUZZ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt" "Recon_Results/$target/ffuf.txt"
-    run_and_save "arjun -u http://$target/page.php?id=1" "Recon_Results/$target/arjun.txt"
+    run_and_save "gobuster dir -u http://$target -w $wordlist" "Recon_Results/$target/gobuster.txt"
+    run_and_save "ffuf -u http://$target/FUZZ -w $wordlist" "Recon_Results/$target/ffuf.txt"
+    run_and_save "arjun -u $arjun_url" "Recon_Results/$target/arjun.txt"
     run_and_save "whatweb $target" "Recon_Results/$target/whatweb.txt"
-    run_and_save "nuclei -u http://$target" "Recon_Results/$target/nuclei.txt"
-    
+    run_and_save "nuclei -u http://$target -t $nuclei_templates" "Recon_Results/$target/nuclei.txt"
+
     echo "[*] Recon Completed for $target. Results saved in Recon_Results/$target"
 }
 
@@ -71,5 +82,5 @@ if [ -z "$1" ]; then
     echo "[!] Please provide a target domain."
     echo "Usage: ./Bug-Bounty-Automated-Recon.sh <domain>"
 else
-    main $1
+    main "$1"
 fi
